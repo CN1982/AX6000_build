@@ -130,3 +130,30 @@ git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/l
 # rm -rf temp_chinadns-ng
 
 merge_package master https://github.com/coolsnowwolf/lede.git package/feeds/NueXini_Packages package/lean/vsftpd-alt
+
+# 修改插件名字
+sed -i 's/"SoftEther VPN Service"/"SoftEther VPN"/g' `egrep "SoftEther VPN Service" -rl ./`
+sed -i 's/"AliDDNS"/"阿里DDNS"/g' `egrep "AliDDNS" -rl ./`
+sed -i 's/"FileBrowser"/"文件管理"/g' `egrep "FileBrowser" -rl ./`
+sed -i 's/"SoftEther Status"/"SoftEther"/g' `egrep "SoftEther Status" -rl ./`
+sed -i 's/"MWAN3 分流助手"/"分流助手"/g' `egrep -rl 'MWAN3 分流助手' ./`
+sed -i 's/"FileBrowser"/"文件管理"/g' `egrep -rl 'FileBrowser' ./`
+sed -i 's/"广告屏蔽大师 Plus+"/"广告屏蔽"/g' `egrep -rl '广告屏蔽大师 Plus+' ./`
+sed -i 's/"AList"/"影视搜刮"/g' `egrep -rl 'AList' ./`
+sed -i 's/"EASY MESH"/"MESH组网"/g' `egrep -rl 'EASY MESH' ./`
+sed -i 's/"服务质量(QoS)"/"服务质量"/g' `egrep -rl '服务质量(QoS)' ./`
+sed -i 's/"服务质量（QoS）"/"服务质量"/g' `egrep -rl '服务质量（QoS）' ./`
+sed -i 's/"frp 客户端"/"FRP客户端"/g' `egrep -rl 'frp 客户端' ./`
+sed -i 's/"解除网易云音乐播放限制"/"网易云音乐"/g' `egrep -rl '解除网易云音乐播放限制' ./`
+sed -i 's/"Multi Stream daemon Lite"/"msd_lite"/g' `egrep -rl 'Multi Stream daemon Lite' ./`
+sed -i 's/"KMS 服务器"/"KMS服务器"/g' `egrep -rl 'KMS 服务器' ./`
+
+cat > package/base-files/files/etc/banner << EOF
+  _______                     ________        __
+ |       |.-----.-----.-----.|  |  |  |.----.|  |_
+ |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|
+ |_______||   __|_____|__|__||________||__|  |____|
+          |__| W I R E L E S S   F R E E D O M
+ -----------------------------------------------------
+ %D %V, %C
+ -----------------------------------------------------
